@@ -31,7 +31,12 @@ function App() {
     // console.log(contact);
   };
 
-  const removeContactHandler = (id) => {
+  const updateContactHandler = async(contact)=>{
+    const response = await api.put(`/contacts/${contact.id}`, contact)
+  };
+
+  const removeContactHandler = async(id) => {
+    await api.delete(`/contacts/${id}`);
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });

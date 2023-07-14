@@ -31,7 +31,7 @@ export default function ContactCard(props) {
     });
   };
 
-  // console.log(props.contact);
+  // console.log(props);
   const { id, name, email } = props.contact;
 
   const dashboardData = {
@@ -52,7 +52,6 @@ export default function ContactCard(props) {
         <i
           className="trash alternate outline icon red"
           onClick={submit}
-
         ></i>
       </div>
     </div>
