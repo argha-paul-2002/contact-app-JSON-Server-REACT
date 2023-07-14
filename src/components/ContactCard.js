@@ -31,7 +31,7 @@ export default function ContactCard(props) {
     });
   };
 
-  console.log(props.contact);
+  // console.log(props.contact);
   const { id, name, email } = props.contact;
 
   const dashboardData = {
