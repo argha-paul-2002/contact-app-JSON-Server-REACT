@@ -3,9 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 export class AddContact extends Component {
   state = {
     id: uuidv4(),
@@ -21,19 +18,24 @@ export class AddContact extends Component {
     }
     this.props.addContactHandler(this.state);
     this.setState({ name: "", email: "" });
-    console.log(this.props);    
+    console.log(this.props);
   };
-  
 
   render() {
     return (
       <div>
-        <form className="ui form" onSubmit={this.add}>
-          <h2>Add Contact</h2>
-          <div className="field">
-            <label>First Name</label>
+        
+
+        <form onSubmit={this.add}>
+          <p className="h2 bold">Add Contact</p>
+          <div className="mb-3">
+            <label for="exampleInputEmail1" className="form-label">
+              Name
+            </label>
             <input
               type="text"
+              className="form-control"
+              id="exampleInputEmail1"
               name="first-name"
               placeholder="First Name"
               value={this.state.name}
@@ -44,24 +46,33 @@ export class AddContact extends Component {
                 });
               }}
             />
+            
           </div>
-          <div className="field">
-            <label>Last Name</label>
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">
+              Email Address
+            </label>
             <input
-              type="text"
+              type="email"
+              className="form-control"
+              id="exampleInputPassword1"
               name="email"
               placeholder="Email"
               value={this.state.email}
               onChange={(e) => this.setState({ email: e.target.value })}
             />
+            
           </div>
-          <button className="ui button blue">
-            Add
+          
+          <button type="submit" className="btn btn-primary">
+            Submit
           </button>
         </form>
-        <Link to="/">
-          <button className="ui button blue right">All Contacts</button>
-        </Link>
+        <div className="container text-center mt-4">
+          <Link to="/">
+            <button className="btn btn-primary">All Contacts</button>
+          </Link>
+        </div>
       </div>
     );
   }

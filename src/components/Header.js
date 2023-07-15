@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div className='ui fixed'>
       <div className="ui container center aligned" style={{justifyContent: 'center'}}>
-        <h2>Contact Manager</h2>
+        <p className='h2 bold mb-3'>Contact Manager</p>
       </div>
     </div>
   )
