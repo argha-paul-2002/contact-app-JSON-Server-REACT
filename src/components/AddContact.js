@@ -17,8 +17,9 @@ export class AddContact extends Component {
       return;
     }
     this.props.addContactHandler(this.state);
+    alert("Contact Saved Successfully");
     this.setState({ name: "", email: "" });
-    console.log(this.props);
+    // console.log(this.props);
   };
 
   render() {

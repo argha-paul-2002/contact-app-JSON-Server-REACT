@@ -28,7 +28,7 @@ export default function ContactList(props) {
           </div>
       </div>
 
-      <div className="row my-4 d-flex justify-content-between">
+      <div className="row my-4 d-flex justify-content-evenly">
         {renderContactList}
       </div>
     </div>
