@@ -6,6 +6,8 @@ export default function ContactList(props) {
   const deleteContactHandler =(id)=>{
     props.getContactId(id);
   }
+  const val = (props.contacts.length);
+  
     const renderContactList = props.contacts.map((contact) =>{
         return(
             <ContactCard contact={contact} key={contact.id} clickHandler={deleteContactHandler} />
@@ -29,7 +31,7 @@ export default function ContactList(props) {
       </div>
 
       <div className="row my-4 d-flex justify-content-evenly">
-        {renderContactList}
+        {val === 0?<h6>Nothing to preview. Please add Your contacts first</h6>:renderContactList}
       </div>
     </div>
   )
