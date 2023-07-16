@@ -34,11 +34,7 @@ export default function ContactCard(props) {
   // console.log(props);
   const { id, name, email } = props.contact;
 
-  const dashboardData = {
-    component: "Dashboard page",
-    content: "Data is sent from profile component",
-    timestamp: Date.now(),
-  };
+ 
   return (
     <>
       <div className="card mb-3" style={{width: "18rem"}}>
