@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
+    const inputEl = useRef("");
+
+    const getSearchTerm = ()=>{
+        // console.log(inputEl.current.value);
+        props.searchKeyword(inputEl.current.value)
+    };
+
 return (
 <div>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -22,10 +29,10 @@ return (
                     </li>
                                         
                 </ul>
-                <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <div className='d-flex'>
+                <input className="form-control me-2 d-flex" type="text" ref={inputEl} placeholder="Search" aria-label="Search" value={props.term} onChange={getSearchTerm}/>
                     <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </div>
             </div>
         </div>
     </nav>
